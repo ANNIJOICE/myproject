@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+  <title>Sharing</title>
+</head>
+<body>
+  <script>
+    let members=Number(prompt('How many members'," "));
+    let amountToGive=[];let myobj={};let myanotherobj={};
+    let storeValues=[];let addedup=0,a=[],b=[];
+    for(let i=0;i<members;i++){
+     storeValues[i]=Number(prompt(`enter the amount ${i+1}`));
+    }
+    for(let i=0;i<members;i++){
+      console.log(storeValues[i])
+       addedup=addedup+storeValues[i];
+      }
+       console.log("Total value:  ",addedup);
+       let average=addedup/members;
+       console.log("Average:  ",average);
+    for(let j=0;j<members;j++){
+      if(storeValues[j]<average){
+        
+         amountToGive[j]=average-storeValues[j];
+        console.log(storeValues[j]+"   amountToGive :"+amountToGive[j]);
+      }
+      else{
+         amountToGive[j]=average-storeValues[j];
+        console.log(storeValues[j]+"  amountToGet :"+amountToGive[j]);
+
+      }}
+      for(let i=0;i<members;i++){
+        console.log(amountToGive[i]);
+      }
+      for(i=0;i<members;i++){
+        if(amountToGive[i]>0){
+          myobj={key:i,value:amountToGive[i]}
+          a.push(myobj.value);
+          
+        }
+        else{
+          myanotherobj={key:i,value:amountToGive[i]}
+          b.push(myanotherobj.value)
+        }
+      }console.log("Array 1: ",a);console.log("Array 2: ",b);
+      for(let i=0;i<a.length;i++){
+        for(let j=0;j<b.length;j++){
+        if(a[i]>=(-b[j]) && a[i]!=0){
+          a[i]=a[i]+b[j];
+          
+          console.log("the member of Array1 member: "+i+"have to give to Array2 member: "+j+"is: "+(-b[j]));
+          b[j]=0;
+                  }
+                  else if(a[i]<(-b[j]) && a[i]!=0){
+                    
+                    b[j]=a[i]+b[j];
+                    console.log("the member Array1 member: "+i+"have to give to Array2 member: "+j+"is: "+a[i]);
+                    a[i]=0;
+                  }else{}
+      }
+      }
+    </script>
+</body>
+</html>
